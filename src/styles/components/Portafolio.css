@@ -1,0 +1,50 @@
+.visualizer-container {
+  text-align: center;
+  background-color: black;
+  padding: 20px;
+}
+
+h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00eaff;
+}
+
+.phones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.phone-container {
+  width: 250px; /* Ajusta según el tamaño del frame */
+  height: 500px;
+  position: relative;
+}
+
+.phone-frame {
+  width: 105%; /* Aumentar un poco el tamaño */
+  height: 105%;
+  position: absolute;
+  top: -2%; /* Ajustar para que quede centrado */
+  left: -2%;
+  z-index: 2;
+}
+
+.screen {
+  width: 100%; /* Asegurar que ocupa todo el espacio */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.85); /* Reducir la imagen para que encaje */
+  transform-origin: center;
+  z-index: 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+

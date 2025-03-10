@@ -1,0 +1,87 @@
+.specialties-container {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .specialties-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .specialties-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00eaff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  
+  .specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .specialty-card {
+    background-color: #00332e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .specialty-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .specialty-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .specialty-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .specialty-description {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #b0c4c4;
+  }
+  
+  .specialty-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .specialty-icons span {
+    font-size: 1.5rem;
+    color: #00eaff;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .specialties-container h1 {
+      font-size: 2.5rem;
+    }
+  
+    .specialties-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .specialties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
