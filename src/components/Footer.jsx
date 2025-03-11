@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        {/* Sección del texto */}
+        {/* Sección de texto */}
         <div className="footer-text">
           <h2>
             ELEVA TU <span>MARCA</span>
@@ -22,7 +22,7 @@ const Footer = () => {
         {/* Sección de la imagen */}
         <div className="footer-image">
           <img src={profileImage} alt="Camila Salinas, Community Manager" />
-          <h3>Camila Salinas, <br /> Community Manager</h3>
+          <h3>Camila Salinas<br />Community Manager</h3>
         </div>
 
         {/* Sección de Contacto y Portafolio */}
@@ -33,7 +33,7 @@ const Footer = () => {
               <a href="https://wa.me/3106268134" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="footer-icon" />
               </a>
-              <a href="https://www.instagram.com/camilasalinas6?igsh=YWZvbTJldXcwNGJu" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/camilasalinas6" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="footer-icon" />
               </a>
             </div>

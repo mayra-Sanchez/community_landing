@@ -1,103 +1,156 @@
 .footer-container {
-    background-color: black;
-    color: white;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: center;
-  }
-  
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+/* 📌 Sección de Texto */
+.footer-text {
+  flex: 1;
+  min-width: 320px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.footer-text h2 {
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer-text span {
+  color: #00c8ff;
+}
+
+.footer-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* 📌 Sección de Imagen */
+.footer-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.footer-image img {
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.footer-image h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 📌 Sección de Contacto y Portafolio */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-section, .portfolio-section {
+  text-align: center;
+}
+
+.contact-section h4, .portfolio-section h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-icons, .portfolio-icon {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-icon {
+  font-size: 36px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2);
+  color: #00c8ff;
+}
+
+/* 🎯 RESPONSIVIDAD */
+@media (max-width: 1024px) {
   .footer-content {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    gap: 40px;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  /* Sección de Texto */
+
   .footer-text {
-    flex: 1;
+    text-align: center;
   }
-  
+
   .footer-text h2 {
     font-size: 36px;
-    font-weight: bold;
   }
-  
-  .footer-text span {
-    color: #00c8ff;
-  }
-  
+
   .footer-text p {
     font-size: 16px;
-    max-width: 400px;
-    line-height: 1.6;
   }
-  
-  /* Sección de Imagen */
-  .footer-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
+
   .footer-image img {
-    width: 230px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 180px;
   }
-  
-  .footer-image h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  /* Sección de Contacto y Portafolio */
+
   .footer-contact {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 20px;
   }
-  
+
   .contact-section, .portfolio-section {
-    text-align: center;
+    width: 50%;
   }
-  
-  .contact-section h4, .portfolio-section h4 {
-    font-size: 14px;
-    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    gap: 20px;
+    padding: 20px;
   }
-  
-  .contact-icons, .portfolio-icon {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 5px;
+
+  .footer-text h2 {
+    font-size: 28px;
   }
-  
-  .footer-icon {
-    font-size: 30px;
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
+
+  .footer-image img {
+    width: 160px;
   }
-  
-  .footer-icon:hover {
-    transform: scale(1.1);
-    color: #00c8ff;
+
+  .footer-contact {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-    }
-  
-    .footer-text p {
-      max-width: 100%;
-    }
+
+  .contact-section, .portfolio-section {
+    width: 100%;
   }
-  
+}

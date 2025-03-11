@@ -83,5 +83,12 @@
     .specialties-grid {
       grid-template-columns: 1fr;
     }
-  }
   
+    .specialty-card {
+      padding: 15px;
+    }
+  
+    .specialty-title {
+      font-size: 1rem;
+    }
+  }

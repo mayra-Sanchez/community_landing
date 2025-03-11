@@ -1,9 +1,14 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 import screen1 from "../assets/pantallas/IMG_1255.png";
 import screen2 from "../assets/pantallas/IMG_1257.png";
 import screen3 from "../assets/pantallas/IMG_1945.png";
 import '../styles/components/Portafolio.css';
-import { motion } from "framer-motion";
 
 const Portafolio = () => {
   const usernames = [
@@ -12,35 +17,42 @@ const Portafolio = () => {
     "@Drdavidguarincirugiaplastica"
   ];
 
-  return (
-    <div style={{ textAlign: "center", backgroundColor: "black", padding: "20px" }}>
-      <h2 style={{ color: "white", fontSize: "2rem" }}>
-        VISUA<span style={{ color: "#00eaff" }}>LIZER</span>
-      </h2>
-      <div style={{ display: "flex", justifyContent: "center", gap: "40px" }}>
-        {[screen1, screen2, screen3].map((screen, index) => (
-          <motion.div
-            key={index}
-            style={{ width: "250px", height: "550px", position: "relative" }}
-            whileHover={{ scale: 1.1 }} // Aumenta el tamaño al pasar el mouse
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={screen}
-              alt={`Perfil ${index + 1}`}
-              style={{
-                width: "92%",
-                height: "81%",
-                position: "absolute",
-                top: "9%",
-                left: "4%",
-                borderRadius: "25px",
-              }}
-            />
+  const screens = [screen1, screen2, screen3];
 
-            <p style={{ color: "#00eaff", textAlign: "center", marginTop: "520px", fontSize: "16px" }}>
-              {usernames[index]}
-            </p>
+  return (
+    <div className="visualizer-container">
+      <h2>
+        VISUA<span className="highlight">LIZER</span>
+      </h2>
+
+      {/* Carrusel solo en pantallas pequeñas */}
+      <div className="carousel-container">
+        <Swiper
+          className="swiper-container"
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          navigation
+          centeredSlides={true} // ✅ Centra las imágenes en el carrusel
+          modules={[Pagination, Navigation]}
+        >
+          {screens.map((screen, index) => (
+            <SwiperSlide key={index}>
+              <motion.div className="image-container" whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
+                <img src={screen} alt={`Perfil ${index + 1}`} className="profile-image" />
+                <p className="username">{usernames[index]}</p>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Grid de imágenes en pantallas grandes */}
+      <div className="grid-container">
+        {screens.map((screen, index) => (
+          <motion.div key={index} className="image-container" whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
+            <img src={screen} alt={`Perfil ${index + 1}`} className="profile-image" />
+            <p className="username">{usernames[index]}</p>
           </motion.div>
         ))}
       </div>

@@ -1,3 +1,7 @@
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+
 .visualizer-container {
   text-align: center;
   background-color: black;
@@ -14,37 +18,68 @@ h2 {
   color: #00eaff;
 }
 
-.phones {
+/* ✅ Diseño en pantallas grandes (3 columnas) */
+.grid-container {
   display: flex;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
-.phone-container {
-  width: 250px; /* Ajusta según el tamaño del frame */
-  height: 500px;
+/* ✅ Centra imagen y username */
+.image-container {
+  width: 250px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   position: relative;
 }
 
-.phone-frame {
-  width: 105%; /* Aumentar un poco el tamaño */
-  height: 105%;
-  position: absolute;
-  top: -2%; /* Ajustar para que quede centrado */
-  left: -2%;
-  z-index: 2;
+.profile-image {
+  width: 92%;
+  height: 81%;
+  border-radius: 25px;
 }
 
-.screen {
-  width: 100%; /* Asegurar que ocupa todo el espacio */
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scale(0.85); /* Reducir la imagen para que encaje */
-  transform-origin: center;
-  z-index: 1;
-  object-fit: cover;
-  border-radius: 20px;
+.username {
+  color: #00eaff;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
+/* ✅ Carrusel en móviles */
+.carousel-container {
+  display: none;
+}
+
+/* ✅ Centra imágenes en el carrusel */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎯 Pantallas pequeñas: muestra carrusel, oculta grid */
+@media (max-width: 768px) {
+  .grid-container {
+    display: none;
+  }
+
+  .carousel-container {
+    display: block;
+  }
+}
+
+/* 🎯 Pantallas grandes: muestra grid, oculta carrusel */
+@media (min-width: 769px) {
+  .grid-container {
+    display: flex !important;
+  }
+
+  .carousel-container {
+    display: none !important;
+  }
+}

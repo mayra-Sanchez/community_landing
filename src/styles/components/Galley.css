@@ -1,0 +1,57 @@
+.video-gallery {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .video-wrapper {
+    border: 8px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .video-wrapper iframe {
+    width: 350px;
+    height: 400px;
+    border-radius: 8px;
+  }
+  
+  .video-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .video-title span {
+    color: cyan;
+  }
+  
+  .video-description {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .video-wrapper iframe {
+      width: 300px;
+      height: 350px;
+    }
+  
+    .video-title {
+      font-size: 32px;
+    }
+  
+    .video-description {
+      font-size: 16px;
+    }
+  }
+  
